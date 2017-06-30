@@ -59,4 +59,4 @@ Ki=0.004 <br>
 
 These values have been tested with speeds upto 65 mph around the track as can be seen in the following video.
 
-[![PID Controlled Steering](./images/pid_controlled_driving.png)](https://youtu.be/y1DhRF8ZuwY "PID Controlled Steering")
+[![PID Controlled Steering](./images/pid_controlled_driving.png)](https://youtu.be/mLK6Lg-ljJM "PID Controlled Steering")
