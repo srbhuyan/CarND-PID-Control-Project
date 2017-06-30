@@ -39,7 +39,7 @@ There's an experimental patch for windows in this [PR](https://github.com/udacit
 
 #### P - Proportional Control
 The proportional control gives a control feedback proportional to the Cross Track Error (cte). Using a proportional control, the steering angle value is given as folliwng: <br>
-steering angle = Kp * cte, where Kp (>0) = Propotional gain <br>
+steering angle = -Kp * cte, where Kp (>0) = Propotional gain <br>
 A proportional control, when used by itself, is unstable and has an effect of overshooting the target trajectory. 
 
 #### D - Differential Control
