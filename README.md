@@ -52,11 +52,11 @@ steering angle = -Kp * cte - Kd * d(cte)/dt - Ki * sum(cte), where Ki (> 0) = In
 
 ## Hyperparameter Tuning
 
-The hyperparameters (Kp, Ki, Kd) were tuned manually to achieve a stable control to drive the vehicle around the track. Initially the proportional gain (Kp) was set to 0.1 with Kd and Ki set to 0.0. This resulted in the vehicle driving upto the first turn, then oscilated out of the track because there was no differential gain to resist the oscillation. With the Kp set to 0.1, Kd was incremented until the oscillation was compensated for. A good value was found to be Kd=1.3. However, at high speeds (>65 mph), the underdamping effect (i.e., oscillation because of low differential gain) was noticed. The vehicle was leaving some portion of the drivable track. A critical damping was achived by using the Kd value of 1.5. The final tuned coefficients are as following: <br>
-Kp=0.07 <br>
-Kd=1.5 <br>
+The hyperparameters (Kp, Ki, Kd) were tuned manually to achieve a stable control to drive the vehicle around the track. Initially the proportional gain (Kp) was set to 0.1 with Kd and Ki set to 0.0. This resulted in the vehicle driving upto the first turn, then oscilated out of the track because there was no differential gain to resist the oscillation. With the Kp set to 0.1, Kd was incremented until the oscillation was compensated for. A good value was found to be Kd=2.0. However, at high speeds (>50 mph), the underdamping effect (i.e., oscillation because of low differential gain) was noticed. The vehicle was leaving some portion of the drivable track. A critical damping was achived by using the Kd value of 2.5. The final tuned coefficients are as following: <br>
+Kp=0.1 <br>
+Kd=2.5 <br>
 Ki=0.004 <br>
 
-These values have been tested with speeds upto 65 mph around the track as can be seen in the following video.
+These values have been tested with speeds upto > 30 mph around the track as can be seen in the following video.
 
-[![PID Controlled Steering](./images/pid_controlled_driving.png)](https://youtu.be/mLK6Lg-ljJM "PID Controlled Steering")
+[![PID Controlled Steering](./images/pid_controlled_driving.png)](https://youtu.be/PX7C5oUh-Mg "PID Controlled Steering")
