@@ -39,7 +39,7 @@ There's an experimental patch for windows in this [PR](https://github.com/udacit
 
 #### P - Proportional Control
 The proportional control gives a control feedback proportional to the Cross Track Error (cte). Using a proportional control, the steering angle value is given as folliwng: <br>
-steering angle = Kp * cte, where Kp (>0) = Propotional gain <br>
+steering angle = -Kp * cte, where Kp (>0) = Propotional gain <br>
 A proportional control, when used by itself, is unstable and has an effect of overshooting the target trajectory. 
 
 #### D - Differential Control
@@ -50,7 +50,7 @@ steering angle = -Kp * cte - Kd * d(cte)/dt, where Kd (> 0) = Differential gain
 The integral term is used to compensate for steady state error, i.e., when the zero-steering angle does not keep the vehicle along the target trajectory. This term sums up the cross-track errors over time to give an indication of whether the vehicle is spending more time on one side of the trajectory or the other. Using the three terms together, the steering angle is given as following: <br>
 steering angle = -Kp * cte - Kd * d(cte)/dt - Ki * sum(cte), where Ki (> 0) = Integral gain
 
-## Hyperparameter Tuning:
+## Hyperparameter Tuning
 
 The hyperparameters (Kp, Ki, Kd) were tuned manually to achieve a stable control to drive the vehicle around the track. Initially the proportional gain (Kp) was set to 0.1 with Kd and Ki set to 0.0. This resulted in the vehicle driving upto the first turn, then oscilated out of the track because there was no differential gain to resist the oscillation. With the Kp set to 0.1, Kd was incremented until the oscillation was compensated for. A good value was found to be Kd=1.3. However, at high speeds (>65 mph), the underdamping effect (i.e., oscillation because of low differential gain) was noticed. The vehicle was leaving some portion of the drivable track. A critical damping was achived by using the Kd value of 1.5. The final tuned coefficients are as following: <br>
 Kp=0.07 <br>
@@ -59,4 +59,4 @@ Ki=0.004 <br>
 
 These values have been tested with speeds upto 65 mph around the track as can be seen in the following video.
 
-[![PID Controlled Steering](./images/pid_controlled_driving.png)](https://youtu.be/y1DhRF8ZuwY "PID Controlled Steering")
+[![PID Controlled Steering](./images/pid_controlled_driving.png)](https://youtu.be/mLK6Lg-ljJM "PID Controlled Steering")
