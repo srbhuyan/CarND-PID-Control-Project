@@ -33,7 +33,6 @@ int main()
   uWS::Hub h;
 
   PID pid;
-  PID throttle_pid;
 
   // TODO: Initialize the pid variable.
   double Kp = 0.07;
